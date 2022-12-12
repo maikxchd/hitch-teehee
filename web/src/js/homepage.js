@@ -390,7 +390,7 @@ async function loginType(){
 			var json = grabInput();
 			var check = await authenticate(json);
 
-			console.log(check);
+			
 	
 			if(check.status == "success"){
 				credJson["userid"]=check.userdata.userid
@@ -493,7 +493,7 @@ function register(credJson){
 	// 	return {"status":"failed"}
 	// }
 	let url = `http://api.${hitch_constant.hostname}/api/auth/register.php`
-	console.log(url);
+	
 	var data = fetch(url,{
 		method: "POST",
 		headers: {"Content-Type":"application/json"},
@@ -501,7 +501,7 @@ function register(credJson){
 	})
 	.then(response => response.json())
 	.then(data => {
-		console.log(data)
+		
 		return data;
 	})
 	return data;

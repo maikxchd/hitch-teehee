@@ -14,6 +14,6 @@ async function test(){
     }catch(e){
         console.log(e);
     }
-    console.log(isAuthed);
+    
 }
 test();
