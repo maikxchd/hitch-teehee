@@ -3,7 +3,7 @@ let hitch_constant={
 	hostname: location.host
 }
 
-console.log(`ws://${hitch_constant.hostname.replace(":8080",":8082")}`)
+
 const socket = io(`ws://${hitch_constant.hostname.replace(":8080",":8082")}`);
 
 
@@ -52,7 +52,7 @@ function init(){
 	var thread; 
 	var userid;
 
-	console.log(cred)
+	
 
 	if(cred){
 		window.cred=null;

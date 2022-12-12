@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
     // })
 
     socket.on('message', async(json) => {
-            console.log(json);
+            
             // if(json.thread != "global" && json.thread != 'Global' ){
             //     saveMessage(json)
             // }
