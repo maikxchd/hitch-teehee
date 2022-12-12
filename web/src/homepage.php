@@ -1,6 +1,6 @@
 <?php
-	require_once("./api/controller/home.php");
-	require("./api/controller/config.php");
+    require_once("./api/controller/home.php");
+    require("./api/controller/config.php");
 ?>
 
 <html lang="en">
@@ -77,15 +77,15 @@
 		</div>
 		<div class="chat">
 			<?php
-				echo "<iframe name=\"chatFrame\" src=\"http://chat".".$SRV_DOMAIN_NAME:$SRV_WEB_PORT"."/chat.php\" frameborder=\"0\"></iframe>";
-				echo "<form id=\"chatForm\" target=\"chatFrame\" action=\"http://chat".".$SRV_DOMAIN_NAME:$SRV_WEB_PORT"."/chat.php\" method=\"POST\">";
-				echo "<input id=\"iframeThread\" name=\"thread\" value=\"global\" type=\"text\">";
-				echo "<input id=\"iframeUserid\" name=\"userid\" type=\"text\">";
-				echo "<input id=\"iframeColor\" name=\"color\" type=\"text\">";
-				echo "<input id=\"iframeUsername\" name=\"username\" type=\"text\">";
-				echo "<input id=\"openChat\" type=\"submit\">";
-				echo "</form>";
-			?>
+                echo "<iframe name=\"chatFrame\" src=\"http://chat".".$SRV_DOMAIN_NAME:$SRV_WEB_PORT"."/chat.php\" frameborder=\"0\"></iframe>";
+                echo "<form id=\"chatForm\" target=\"chatFrame\" action=\"http://chat".".$SRV_DOMAIN_NAME:$SRV_WEB_PORT"."/chat.php\" method=\"POST\">";
+                echo "<input id=\"iframeThread\" name=\"thread\" value=\"global\" type=\"text\">";
+                echo "<input id=\"iframeUserid\" name=\"userid\" type=\"text\">";
+                echo "<input id=\"iframeColor\" name=\"color\" type=\"text\">";
+                echo "<input id=\"iframeUsername\" name=\"username\" type=\"text\">";
+                echo "<input id=\"openChat\" type=\"submit\">";
+                echo "</form>";
+            ?>
 		</div>
 	</div>
 

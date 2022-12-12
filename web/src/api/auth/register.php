@@ -1,8 +1,11 @@
-<?php    
+<?php
+
     require("allowCors.php");
 
-    if($_SERVER["REQUEST_METHOD"] !== "POST")die;
-    
+    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        die;
+    }
+
     require("check.php");
     require(__DIR__."/../controller/api.php");
     require_once("auth_utils.php");
@@ -22,11 +25,11 @@
     // generated datas:
     $displayname = $username;
     $userid = hash('sha256', $username.$password);
-    
+
 
     // auth process:
         // check if user exist
-    if(checkIfUserExist($conn, $username, $userid)){
+    if (checkIfUserExist($conn, $username, $userid)) {
         echo '{"status":"failed"}';
         die;
     }
@@ -56,12 +59,9 @@
     $query = $conn->query("SELECT username, color, userid FROM users WHERE userid = '{$userid}'");
     $usersData = $query->fetch_assoc();
     $jsonData = json_encode($usersData);
-    echo '{"status":"success", "userdata":'.$jsonData.'}';            
-                
+    echo '{"status":"success", "userdata":'.$jsonData.'}';
+
         // create new entry in session
             // $sesHandler = new authHandler($conn);
             // $sessionHandler->addSessionToDB($_COOKIE["PHPSESSION"], $userid);
             // returnStatus("success");
-    
-    
-?>
