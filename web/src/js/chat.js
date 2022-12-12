@@ -112,7 +112,7 @@ function parseURLParams(url) {
 		n = decodeURIComponent(nv[0]);
 		v = decodeURIComponent(nv[1]);
 
-		if (!parms.hasOwnProperty(n)){
+		if (!Object.prototype.hasOwnProperty.call(parms, n)){
 			parms[n]=v;
 		}
 	}
