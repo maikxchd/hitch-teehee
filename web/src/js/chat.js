@@ -24,7 +24,7 @@ function addNewMessage(newMessage){
 }
 
 function padLeadingZeros(num, size) {
-    var s = num+"";
+    var s = String(num);
     while (s.length < size) s = "0" + s;
     return s;
 }
