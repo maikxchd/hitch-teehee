@@ -1,4 +1,5 @@
 <?php
+
     require("allowCors.php");
     require(__DIR__."/../controller/api.php");
     require(__DIR__."/../controller/connection.php");
@@ -9,13 +10,12 @@
 
     $username = $json->username;
     $userID = "0";
-    if(isset($json->userid)){
+    if (isset($json->userid)) {
         $userID = $json->userid;
     }
 
-    if(!checkIfUserExist($conn, $username, $userID)){
+    if (!checkIfUserExist($conn, $username, $userID)) {
         echo '{"status":"success"}';
         die;
     }
-    echo '{"status":"failed"}'
-?>
+    echo '{"status":"failed"}';

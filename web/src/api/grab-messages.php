@@ -1,4 +1,5 @@
 <?php
+
     require("controller/api.php");
     require_once("controller/connection.php");
 
@@ -9,5 +10,3 @@
 
     $query = $conn->query("SELECT * FROM messages WHERE thread = '{$json->thread}'");
     $result = $query->fetch_array();
-
-?>

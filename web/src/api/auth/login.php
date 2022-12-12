@@ -1,4 +1,5 @@
 <?php
+
     require("allowCors.php");
     require("./auth_utils.php");
     require("../controller/api.php");
@@ -14,17 +15,14 @@
 
     // echo $json->password."\n\n";
     // echo $data["password"]."\n".hash('sha256', $json->password)."\n";
-    
 
-    if($data["password"] === hash('sha256', $json->password)){
+
+    if ($data["password"] === hash('sha256', $json->password)) {
         $userid = $data["userid"];
         $query = $conn->query("SELECT username, color, userid FROM users WHERE userid = '{$userid}'");
         $usersData = $query->fetch_assoc();
         $jsonData = json_encode($usersData);
         echo '{"status":"success", "userdata":'.$jsonData.'}';
-    }else{
+    } else {
         echo '{"status":"failed"}';
     }
-
-
-?>

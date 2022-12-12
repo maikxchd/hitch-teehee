@@ -1,15 +1,21 @@
 <?php
-    class dbHandler{
+
+    class dbHandler
+    {
         public mysqli $connection;
 
-        public function __construct(mysqli $conn) {
+        public function __construct(mysqli $conn)
+        {
             $this->connection = $conn;
         }
     }
 
-    class authHandler extends dbHandler{
-        public function addUser(string $username, string $password, string $color, $userID){
-            $this->conn->query("
+    class authHandler extends dbHandler
+    {
+        public function addUser(string $username, string $password, string $color, $userID)
+        {
+            $this->conn->query(
+                "
                 INSERT INTO 
                     `users`
                         (
@@ -34,10 +40,10 @@
         }
     }
 
-    function returnStatus(string $status){
+    function returnStatus(string $status)
+    {
         $status = `{
             "status":"{$status}"
         }`;
         echo $status;
     }
-?>
